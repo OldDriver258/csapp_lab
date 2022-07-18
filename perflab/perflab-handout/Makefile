@@ -9,15 +9,18 @@ LIBS = -lm
 
 OBJS = driver.o kernels.o fcyc.o clock.o
 
-all: driver
+all: driver test
 
 driver: $(OBJS) fcyc.h clock.h defs.h config.h
 	$(CC) $(CFLAGS) $(OBJS) $(LIBS) -o driver
+
+test: $(OBJS) test.o fcyc.h clock.h defs.h config.h
+	$(CC) $(CFLAGS) test.o $(LIBS) -o test
 
 handin:
 	cp kernels.c $(HANDINDIR)/$(TEAM)-$(VERSION)-kernels.c
 
 clean: 
-	-rm -f $(OBJS) driver core *~ *.o
+	-rm -f $(OBJS) driver test core *~ *.o
 
 
