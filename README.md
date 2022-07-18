@@ -4,3 +4,6 @@ CSAPP 深入理解计算机系统（原书第3版）
 
 ## datalab
 > [https://www.yuchencoding.site/zh/csapp_lab/DataLab](https://www.yuchencoding.site/zh/csapp_lab/DataLab)
+
+## bomblab
+> [https://www.yuchencoding.site/zh/csapp_lab/BombLab](https://www.yuchencoding.site/zh/csapp_lab/BombLab)
