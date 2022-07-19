@@ -6,7 +6,7 @@ VERSION = 1
 HANDINDIR = /afs/cs.cmu.edu/academic/class/15213-f01/malloclab/handin
 
 CC = gcc
-CFLAGS = -Wall -g -m32
+CFLAGS = -Wall -O2 -m32
 
 OBJS = mdriver.o mm.o memlib.o fsecs.o fcyc.o clock.o ftimer.o
 
@@ -30,6 +30,12 @@ mdriver-explicit: cp_explicit $(OBJS)
 
 cp_explicit: 
 	cp mm-explicit.c mm.c
+
+mdriver-segregated: cp_segregated $(OBJS)
+	$(CC) $(CFLAGS) -o mdriver $(OBJS)
+
+cp_segregated: 
+	cp mm-segregated.c mm.c
 
 mdriver.o: mdriver.c fsecs.h fcyc.h clock.h memlib.h config.h mm.h
 memlib.o: memlib.c memlib.h
